@@ -1,0 +1,50 @@
+# Node.js dependencies
+node_modules/
+
+# Python dependencies and build artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Environment files (never commit these!)
+.env
+.env.*
+venv/  # Or whatever virtual environment directory you use
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+tmp/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Package lock files
+package-lock.json
+yarn.lock
+
+# Docker related files (if you're using Docker)
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Logs
+*.log
+
+# Static assets (if generated during build)
+public/static/  # Or the directory where your built static assets go
+
+# Testing related files
+coverage/
+.pytest_cache/
+
+# Any other files or directories you want to ignore
