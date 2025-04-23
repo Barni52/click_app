@@ -1,11 +1,10 @@
 import React from 'react'
+import ListContainer from '../components/ListContainer'
 
 const Leaderboard = () => {
   return (
     <div>
-      <h1>
-        Leaderboard
-      </h1>
+      <ListContainer />
     </div>
   )
 }
