@@ -20,19 +20,19 @@ const LeaderBoard = () => {
     return b.score - a.score;
   });
 
-  const scoreItem = scores.map((score, index) => (
+  const scoreItems = scores.map((score, index) =>(
     <li
       key={score.id}
       className="mb-4 text-xl font-semibold bg-blue-100 p-3 rounded-lg flex items-center justify-between"
     >
-      {index + 1}. : {score.score} clicks
+      {index + 1}. : {score.score} clicks 
     </li>
   ));
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-        <ul className="space-y-2">{scoreItem}</ul>
+        <ul className="space-y-2">{scoreItems}</ul>
       </div>
     </div>
   );
