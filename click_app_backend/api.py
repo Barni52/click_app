@@ -4,11 +4,7 @@ from flask_restful import Resource, Api, reqparse, fields, marshal_with, abort
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {
-    "origins": "http://localhost:5173",
-    "allow_headers": ["Content-Type", "Accept"],
-    "supports_credentials": True
-}})
+CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 db = SQLAlchemy(app)
 api = Api(app)
@@ -56,4 +52,4 @@ def home():
     return '<h1>Hey</h1>'
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=5000)

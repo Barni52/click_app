@@ -5,27 +5,14 @@ import axios from "axios";
 
 const HomeManager = () => {
   const [clickAmount, setClickAmount] = useState(0);
-  const [scores, setScores] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("http://localhost:5000/api/scores/");
-        setScores(response.data);
-      } catch (error) {
-        console.error("Error fetching scores:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
 
   const handleSaveScore = () => {
     if (clickAmount > 0) {
-      axios.post("http://localhost:5000/api/scores/", { score: clickAmount }).then(() => {
-        axios.get("http://localhost:5000/api/scores/").then((response) => setScores(response.data));
-        setClickAmount(0);
-      });
+      axios
+        .post("http://localhost:5000/api/scores/", { score: clickAmount })
+        .then(() => {
+          setClickAmount(0);
+        });
     }
     console.log(clickAmount);
   };
